@@ -78,16 +78,9 @@ console.log('Escribe una función llamada combineTwoArrays que reciba dos array 
 let arrayUno = [15,'dos',true]
 let arrayDos = ['Juan',70,false]
 
-const combineTwoArrays = () => {
-
-}
-
-// combineTwoArrays(arrayUno, arrayDos)
-// combineTwoArrays('Juan',70,false)
-
 const listarArticulos = (arrayUno,arrayDos) => {
   const arrayTres = [...arrayUno,...arrayDos]
-return arrayTres
+  return arrayTres
 }
 
 console.log(listarArticulos(arrayUno,arrayDos))
@@ -124,15 +117,12 @@ console.log(maximaManana)
 console.log('Escriba una función llamada onlyUniques que acepte cualquier número de argumentos y devuelva un array de elementos únicos, sin repetidos.')
 
 const onlyUniques = (...argumentos) =>{
-  console.log("lllllllllll",argumentos)
-  
-  // let combination = argumentos.concat()
-  // console.log(combination)
+  return Array.from(new Set(argumentos))
 }
 
-onlyUniques('gato', 'pollo', 'cerdo', 'cerdo'); 
-//['gato', 'pollo', 'cerdo']
-// onlyUniques(1, 1, 2, 2, 3, 6, 7, 8); //[1, 2, 3, 6, 7, 8]
+console.log(onlyUniques('gato', 'pollo', 'cerdo', 'cerdo')); 
+// ['gato', 'pollo', 'cerdo']
+console.log(onlyUniques(1, 1, 2, 2, 3, 6, 7, 8)); //[1, 2, 3, 6, 7, 8]
 
 
 
@@ -140,17 +130,27 @@ onlyUniques('gato', 'pollo', 'cerdo', 'cerdo');
 
 console.log('Escriba una función llamada combineAllArrays que pueda recibir cualquier cantidad de arrays como argumentos y los combine todos en un solo array.')
 
-const combineAllArrays = (...combineAllArrays) =>{
-  let combinar2 = combineAllArrays
-
+const combineAllArrays = (a,b) =>{
+  let combinar2 = [...a,...b]
+  return combinar2
 }
 
-combineAllArrays([3, 6, 7, 8],[2, 7, 3, 1])
+console.log(combineAllArrays([3, 6, 7, 8],[2, 7, 3, 1]));
 // [3, 6, 7, 8, 2, 7, 3, 1]
-combineAllArrays([2, 7, 3, 1],[2, 7, 4, 12],[2, 44, 22, 7, 3, 1]);
+console.log(combineAllArrays([2, 7, 3, 1],[2, 7, 4, 12],[2, 44, 22, 7, 3, 1]));
 // [2, 7, 3, 1, 2, 7, 4, 12, 2, 44, 22, 7, 3, 1]
 
 
+
+
+console.log('Escriba una función llamada sumAndSquare que reciba cualquier número de argumentos, los eleve al cuadrado y devuelva la suma de todos los valores cuadrados.')
+
+const sumAndSquare = (...elevador) => {
+  const aCuadrado = elevador.map((e)=>e*e)
+  return aCuadrado.reduce((a,b)=>a+b)
+}
+
+console.log(sumAndSquare(2,3,4,5,6,7,8));
 
 
 
