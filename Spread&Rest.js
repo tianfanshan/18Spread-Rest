@@ -29,6 +29,8 @@ console.log(email)
 let a = 5;
 let b = 3;
 
+[a,b] = [b,a];
+
 
 //2.Ejercicios spread/rest
 
