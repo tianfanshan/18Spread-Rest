@@ -152,6 +152,12 @@ const combineAllArrays = (...combinados) =>{
   return combinados.reduce((a,b)=>[...a, ...b])
 }
 
+// const combineAllArrays = (...combinados) =>{
+//   return combinarArray = arrays.flat()
+// }
+//一样可用
+
+
 console.log(combineAllArrays([3, 6, 7, 8],[2, 7, 3, 1]));
 // [3, 6, 7, 8, 2, 7, 3, 1]
 console.log(combineAllArrays([2, 7, 3, 1],[2, 7, 4, 12],[2, 44, 22, 7, 3, 1]));
