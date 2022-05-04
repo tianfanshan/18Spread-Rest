@@ -17,6 +17,10 @@ console.log(dos)
 const {name,email} = tres
 console.log(email)
 
+
+
+
+
 //Usa la desestructuración para intercambiar los valores de a y b
 
 // Inicialmente
@@ -31,6 +35,12 @@ let b = 3;
 
 [a,b] = [b,a];
 
+console.log(a);
+console.log(b);
+
+
+
+
 
 //2.Ejercicios spread/rest
 
@@ -43,9 +53,9 @@ const sumEveryOther = (...laSuma) => {
   return sum
 }
 
-console.log(sumEveryOther(11, 3, 12)); //20
+console.log(sumEveryOther(11, 3, 12)); //26
 console.log(sumEveryOther(11, 3, 12)); //26 
-console.log(sumEveryOther(11, 3)); //26 
+console.log(sumEveryOther(11, 3)); //14
 
 
 
@@ -67,11 +77,11 @@ console.log('Escribe una función llamada countTheArgs que pueda recibir cualqui
 
 const countTheArgs = (...args) =>{
   let index = args.length
-  console.log(index)
+  return index
 }
 
-countTheArgs('gato', 'perro'); //2
-countTheArgs('gato', 'perro', 'pollo', 'oso'); //4
+console.log(countTheArgs('gato', 'perro')); //2
+console.log(countTheArgs('gato', 'perro', 'pollo', 'oso')); //4
 
 
 
@@ -113,6 +123,12 @@ const maximaManana = copyHIGH_TEMPERATURES.tomorrow
 console.log(maximaHoy)
 console.log(maximaManana)
 
+const {today,tomorrow} = HIGH_TEMPERATURES
+
+console.log(today)
+console.log(tomorrow)
+
+
 
 
 
@@ -132,15 +148,15 @@ console.log(onlyUniques(1, 1, 2, 2, 3, 6, 7, 8)); //[1, 2, 3, 6, 7, 8]
 
 console.log('Escriba una función llamada combineAllArrays que pueda recibir cualquier cantidad de arrays como argumentos y los combine todos en un solo array.')
 
-const combineAllArrays = (a,b) =>{
-  let combinar2 = [...a,...b]
-  return combinar2
+const combineAllArrays = (...combinados) =>{
+  return combinados.reduce((a,b)=>[...a, ...b])
 }
 
 console.log(combineAllArrays([3, 6, 7, 8],[2, 7, 3, 1]));
 // [3, 6, 7, 8, 2, 7, 3, 1]
 console.log(combineAllArrays([2, 7, 3, 1],[2, 7, 4, 12],[2, 44, 22, 7, 3, 1]));
 // [2, 7, 3, 1, 2, 7, 4, 12, 2, 44, 22, 7, 3, 1]
+
 
 
 
